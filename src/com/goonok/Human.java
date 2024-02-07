@@ -14,7 +14,7 @@ public class Human {
 	//Known as Advise 
 	//if we specify the qualified name of the class before the function
 	//it will only call that classes method according to cross-cutting concept
-	@Before("execution(public void com.goonok.Student.study*())")
+	@Before("execution(public * study*())")
 	public void wakeup() {
 		System.out.println("Good Morning...");
 	}
