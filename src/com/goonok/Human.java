@@ -7,7 +7,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Aspect 
+@Aspect // known as aspect
 @EnableAspectJAutoProxy
 public class Human {
 
@@ -17,5 +17,10 @@ public class Human {
 	@Before("execution(public * study*())")
 	public void wakeup() {
 		System.out.println("Good Morning...");
+	}
+	
+	@After("execution(public * study*())")
+	public void sleep() {
+		System.out.println("Good Night...");
 	}
 }
