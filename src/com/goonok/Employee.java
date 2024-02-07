@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Employee {
-	public void study() {
+	public void studySomething() {
 		System.out.println("I am exploring - ");
 	}
 

@@ -13,10 +13,10 @@ public class App {
 	
 	Employee em = context.getBean("employee", Employee.class);
 	
-	st.study();
+	st.studyAnything();
 
 	System.out.println();
-	em.study();
+	em.studySomething();
 	}
 
 }
