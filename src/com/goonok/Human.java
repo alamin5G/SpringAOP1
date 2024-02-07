@@ -1,5 +1,6 @@
 package com.goonok;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -16,8 +17,8 @@ public class Human {
 	//if we specify the qualified name of the class before the function
 	//it will only call that classes method according to cross-cutting concept
 	@Before("myPointCuts()")
-	public void wakeup() {
-		System.out.println("Good Morning...");
+	public void wakeup(JoinPoint j) {
+		System.out.println("Good Morning..." + j.getSignature()); //using joinPoint we can get any information
 	}
 	
 	@After("myPointCuts()")
@@ -25,7 +26,7 @@ public class Human {
 		System.out.println("Good Night...");
 	}
 	
-	@Pointcut("execution(public * study*())")
+	@Pointcut("execution(public * study*(..))")
 	public void myPointCuts() {
 		
 	}

@@ -14,13 +14,13 @@ public class App {
 	Employee em = context.getBean("employee", Employee.class);
 	
 	//join points (before) because here the advise will call
-	st.studyAnything();
+	st.studyAnything(5,6);
 	//join points (after)
 
 	System.out.println();
 	
 	//join points (before) because here the advise will call
-	em.studySomething();
+	//em.studySomething();
 	//join points (after)
 	}
 
